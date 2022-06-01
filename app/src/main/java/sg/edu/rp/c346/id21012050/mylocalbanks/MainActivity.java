@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView UOB;
 
     String wordClicked = "";
+    boolean flag = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentCall);
 
             } else if (item.getItemId() == 2) {
-                DBS.setTextColor(Color.parseColor("#ff0000"));
+                if (flag == true) {
+                    DBS.setTextColor(Color.parseColor("#ff0000"));
+                    flag = false;
+                } else {
+                    DBS.setTextColor(Color.BLACK);
+                    flag = true;
+                }
             }
 
         } else if (wordClicked.equalsIgnoreCase("OCBC")) {
@@ -79,7 +86,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentCall);
 
             } else if (item.getItemId() == 2) {
-                OCBC.setTextColor(Color.parseColor("#ff0000"));
+                if (flag == true) {
+                    OCBC.setTextColor(Color.parseColor("#ff0000"));
+                    flag = false;
+                } else {
+                    OCBC.setTextColor(Color.BLACK);
+                    flag = true;
+                }
             }
 
         } else if (wordClicked.equalsIgnoreCase("UOB")) {
@@ -94,7 +107,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentCall);
 
             } else if (item.getItemId() == 2) {
-                UOB.setTextColor(Color.parseColor("#ff0000"));
+                if (flag == true) {
+                    UOB.setTextColor(Color.parseColor("#ff0000"));
+                    flag = false;
+                } else {
+                    UOB.setTextColor(Color.BLACK);
+                    flag = true;
+                }
             }
         }
         return super.onContextItemSelected(item);
